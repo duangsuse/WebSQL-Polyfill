@@ -5,13 +5,13 @@ if (typeof window.openDatabase === 'undefined')
 		function sqlLoader() {
 			var basePath = '';
 			(function(name) {
-				var scripts = document.getElementsByTagName('script');
+				var scripts = [document.currentScript] //ElementsByTagName('script');
 
 				for (var i = scripts.length - 1; i >= 0; --i) {
 					var src = scripts[i].src;
 					var l = src.length;
 					var length = name.length;
-					if (src.substr(l - length) == name) {
+					if (true||src.substr(l - length) == name) {
 						// set a global propery here
 						basePath = src.substr(0, l - length);
 					}
